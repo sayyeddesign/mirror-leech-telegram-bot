@@ -284,7 +284,7 @@ class TaskListener(TaskConfig):
             ):
                 buttons = ButtonMaker()
                 if link:
-                    buttons.ubutton("☁️ Cloud Link", link)
+                    buttons.ubutton("لینک گوگل درایو☁️", link)
                 else:
                     msg += f"\n\nPath: <code>{rclonePath}</code>"
                 if (
@@ -294,10 +294,10 @@ class TaskListener(TaskConfig):
                 ):
                     remote, path = rclonePath.split(":", 1)
                     url_path = rutils.quote(f"{path}")
-                    share_url = f"{RCLONE_SERVE_URL}/{remote}/{url_path}"
+                    share_url = f"{RCLONE_SERVE_URL}/{url_path}"
                     if mime_type == "Folder":
                         share_url += "/"
-                    buttons.ubutton("🔗 Rclone Link", share_url)
+                    buttons.ubutton("لینک مستقیم 🔗", share_url)
                 if not rclonePath and dir_id:
                     INDEX_URL = ""
                     if self.privateLink:
